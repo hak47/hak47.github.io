@@ -1,0 +1,7 @@
+<span id="a">hak@hak47.github.io</span>:<span id="b">~/hAK47/resource</span><span id="c">$</span> ls<br>
+
+<a href = "/resourse/Walkthroughs">Walkthroughs</a>
+
+<a href = "/resourse/ctf">CTFs</a>
+
+<a href = "/resourse/scripts">Scripts</a>

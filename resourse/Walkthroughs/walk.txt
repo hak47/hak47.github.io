@@ -1,1 +1,20 @@
+<span id="a">hak@hak47.github.io</span>:<span id="b">~/hAK47/resource/Walkthroughs</span><span id="c">$</span> ls -alR<br>
+
+./Walkthrough:
+drwxr-xr-x 2 root root 4096 Sep 10 19:01 OWASP
+drwxr-xr-x 2 root root 4096 Sep 10 19:02 VulnHub
+drwxr-xr-x 2 root root 4096 Sep 10 19:02 Wargames
+
+./Walkthrough/Wargames:
+-rw-r--r-- 1 root root   17 Sep 10 19:02 bandit
+-rw-r--r-- 1 root root   19 Sep 10 19:02 natas
+
+
+./Walkthrough/VulnHub:
+total 16
+-rw-r--r-- 1 root root   12 Sep 10 19:02 Kiop-1
+-rw-r--r-- 1 root root   12 Sep 10 19:02 Kiop-2
+
+./Walkthrough/OWASP:
+-rw-r--r-- 1 root root   12 Sep 10 19:01 sec-sheph
 

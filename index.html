@@ -1,0 +1,302 @@
+<style type="text/css">
+/**
+ *
+ * Hey. My name's Samuel Reed. I'm CTO of BitMEX.com and an occasional
+ * freelance contractor.
+ *
+ * I build interactive websites.
+ *
+ * How about some live coding?
+ */
+
+/**
+ * Let's begin. We start by animating... well, everything.
+ */
+
+* {
+  -webkit-transition: all 1s;
+}
+
+/**
+ * That didn't do much. But you'll see.
+ *
+ * Black on white is really boring,
+ * so let's do something about it.
+ */
+
+html {
+  background: rgb(63, 82, 99);
+}
+
+/***
+ * Hold on...
+ */
+
+pre {
+  color: red;
+  display: block;
+  unicode-bidi: embed;
+  font-family: monospace;
+  white-space: pre;
+  font-size:20px;
+}
+
+/**
+ * That's better. Sorry about your eyes.
+ *
+ * Working in this big empty space is tough.
+ *
+ * I'm going to make a nice area for us to work in.
+ */
+
+pre:not(:empty) {
+  overflow: auto;
+  background: rgb(0, 0, 0);
+  border: 1px solid #ccc;
+  max-height: 75%;
+  width: 50%;
+  font-size: 14px;
+  font-family: monospace;
+  padding: 10px 10px 20px;
+  box-shadow: -4px 4px 2px 0 rgba(0,0,0,0.3);
+  white-space: pre-wrap;
+  outline: 0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/**
+ * Okay. We're going to start filling up the screen.
+ * Let's get ready to do some work.
+ */
+
+#style-text {
+  -webkit-transform: translateX(95%);
+  position: absolute;
+}
+
+/**
+ * This is good, but all the text is white!
+ * Let's make it even more readable.
+ */
+
+.comment       { color: #857F6B; font-style: italic; }
+.selector      { color: #E69F0F; }
+.selector .key { color: #64D5EA; }
+.key           { color: #64D5EA; }
+.value         { color: #BE84F2; }
+.value.px      { color: #F92772; }
+
+/**
+ * Now we're getting somewhere.
+ * Time to get a little perspective.
+ */
+
+
+/**
+ * So, let's talk projects. That's why you're here, right?
+ * I can't imagine you'd come just to see the pretty colors.
+ */
+
+pre:not(#style-text) {
+  -webkit-transform: rotateY(10deg);
+  -webkit-transform-origin: left;
+}
+</style>
+
+<pre>
+                                                            00                
+                                                             00100             
+                                                             00100             
+                                                      000000100                
+10110   10100     01101     00101   0110100        0010110100                  
+10110   10100    1011010    00101  001101       0010010100                     
+10110   10100   010000101   001010010100   000001010000   000000  00000000000000
+1011010110100   010   101   0010100101   0010100100      0110101  01001010010100
+1011010010100  0010   1010  00101001010000110100       010100101    00000100100
+10110   10100  00100001010  00101   0110101000        00100  101       0010010
+10110   10100  00100001010  00101   0110101          10010   101      1010010
+10000   00100  0010   1000  00101011010100          1001000010110   0010100
+                            0010100100101011010000  0000010101000  0010100
+                          000101000  1000010100101          0000   0000000
+                         001001010000000   00000101         1100   010100
+                      0001010000100            0010                            
+                  0000101100   0100                                            
+               001011010110    0000            .100001  .1001.  000001.1001.
+             010010110101                     1000"    100""001 000 "000 "001
+               001011010                      000      000  000 000  000  000
+                 10110                    d8b 1001.    100..000 000  000  000
+                  0000                    Y8P   100000  "1000"  000  000  000
+###################################################################################
+#                           Weclome to The HAK47.com                              #
+#    WARNING : Unauthorized use is prohibited and punishable by disintegration    #
+###################################################################################
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<style type="text/css">
+  a {
+    color: #0bc;
+    text-decoration: none;
+  }
+  #a {
+    color: #0f0;
+  }
+  #c {
+    color: #ffffff;
+  }
+  #b {
+    color: #ff0096;
+  }
+  #d {
+        color: #990000;
+    }
+    pre {
+        color: red;
+        display: block;
+        unicode-bidi: embed;
+        font-family: monospace;
+        white-space: pre;
+        font-size:14px;
+}
+    p {
+        color: grey;
+
+}
+</style>
+<script type="text/javascript"> 
+  var Typer={
+  text: null,
+  accessCountimer:null,
+  index:0, // current cursor position
+  speed:2, // speed of the Typer
+  file:"", //file, must be setted
+  accessCount:0, //times alt is pressed for Access Granted
+  deniedCount:0, //times caps is pressed for Access Denied
+  init: function(){// inizialize Hacker Typer
+    accessCountimer=setInterval(function(){Typer.updLstChr();},500); // inizialize timer for blinking cursor
+    $.get(Typer.file,function(data){// get the text file
+      Typer.text=data;// save the textfile in Typer.text
+      Typer.text = Typer.text.slice(0, Typer.text.length-1);
+    });
+  },
+ 
+  content:function(){
+    return $("#console").html();// get console content
+  },
+ 
+  write:function(str){// append to console content
+    $("#console").append(str);
+    return false;
+  },
+ 
+  makeAccess:function(){//create Access Granted popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+    Typer.hidepop(); // hide all popups
+    Typer.accessCount=0; //reset count
+    var ddiv=$("<div id='gran'>").html(""); // create new blank div and id "gran"
+    ddiv.addClass("accessGranted"); // add class to the div
+    ddiv.html("<h1>ACCESS GRANTED</h1>"); // set content of div
+    $(document.body).prepend(ddiv); // prepend div to body
+    return false;
+  },
+  makeDenied:function(){//create Access Denied popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+    Typer.hidepop(); // hide all popups
+    Typer.deniedCount=0; //reset count
+    var ddiv=$("<div id='deni'>").html(""); // create new blank div and id "deni"
+    ddiv.addClass("accessDenied");// add class to the div
+    ddiv.html("<h1>ACCESS DENIED</h1>");// set content of div
+    $(document.body).prepend(ddiv);// prepend div to body
+    return false;
+  },
+ 
+  hidepop:function(){// remove all existing popups
+    $("#deni").remove();
+    $("#gran").remove();
+  },
+ 
+  addText:function(key){//Main function to add the code
+    if(key.keyCode==18){// key 18 = alt key
+      Typer.accessCount++; //increase counter 
+      if(Typer.accessCount>=3){// if it's presed 3 times
+        Typer.makeAccess(); // make access popup
+      }
+    }else if(key.keyCode==20){// key 20 = caps lock
+      Typer.deniedCount++; // increase counter
+      if(Typer.deniedCount>=3){ // if it's pressed 3 times
+        Typer.makeDenied(); // make denied popup
+      }
+    }else if(key.keyCode==27){ // key 27 = esc key
+      Typer.hidepop(); // hide all popups
+    }else if(Typer.text){ // otherway if text is loaded
+      var cont=Typer.content(); // get the console content
+      if(cont.substring(cont.length-1,cont.length)=="|") // if the last char is the blinking cursor
+        $("#console").html($("#console").html().substring(0,cont.length-1)); // remove it before adding the text
+      if(key.keyCode!=8){ // if key is not backspace
+        Typer.index+=Typer.speed; // add to the index the speed
+      }else{
+        if(Typer.index>0) // else if index is not less than 0 
+          Typer.index-=Typer.speed;// remove speed for deleting text
+      }
+      var text=Typer.text.substring(0,Typer.index)// parse the text for stripping html enities
+      var rtn= new RegExp("\n", "g"); // newline regex
+  
+      $("#console").html(text.replace(rtn,"<br/>"));// replace newline chars with br, tabs with 4 space and blanks with an html blank
+      window.scrollBy(0,50); // scroll to make sure bottom is always visible
+    }
+    if ( key.preventDefault && key.keyCode != 122 ) { // prevent F11(fullscreen) from being blocked
+      key.preventDefault()
+    };  
+    if(key.keyCode != 122){ // otherway prevent keys default behavior
+      key.returnValue = false;
+    }
+  },
+ 
+  updLstChr:function(){ // blinking cursor
+    var cont=this.content(); // get console 
+    if(cont.substring(cont.length-1,cont.length)=="|") // if last char is the cursor
+      $("#console").html($("#console").html().substring(0,cont.length-1)); // remove it
+    else
+      this.write("|"); // else write it
+  }
+}
+ 
+function replaceUrls(text) {
+  var http = text.indexOf("http://");
+  var space = text.indexOf(".me ", http);
+  if (space != -1) { 
+    var url = text.slice(http, space-1);
+    return text.replace(url, "<a href=\""  + url + "\">" + url + "</a>");
+  } else {
+  return text
+}
+}
+
+Typer.speed=1;
+Typer.file="index12.txt";
+Typer.init();
+
+ 
+var timer = setInterval("t();", 30);
+function t() {
+  Typer.addText({"keyCode": 123748});
+  if (Typer.index > Typer.text.length) {
+    clearInterval(timer);
+  }
+}
+ 
+</script> 
+<div id="console"></div> 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-610661-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</pre>
+</body> 
+</html> 

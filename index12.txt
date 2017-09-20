@@ -1,0 +1,6 @@
+<span id="a">hak@hak47.github.io</span>:<span id="b">~</span><span id="c">$</span> cd hAK47/menu       
+<span id="a">hak@hak47.github.io</span>:<span id="b">~/hAK47/menu</span><span id="c">$</span> ls
+<a href = "#">home</a>
+<a href = "/resource">Resources</a>
+<a href = "#">Whoami</a>
+Follow on Twitter <a href = "https://twitter.com/TheHak47">@TheHak47</a> 
